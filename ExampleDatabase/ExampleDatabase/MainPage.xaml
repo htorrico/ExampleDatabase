@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExampleDatabase.MainPage">
+
+    <StackLayout>
+        <Label Text="Nombres"></Label>
+        <Entry x:Name="eFirstName"></Entry>
+        <Label Text="Apellidos"></Label>
+        <Entry x:Name="eLastName"></Entry>
+        <Button Text="Grabar" Clicked="Button_Clicked_1"></Button>
+        <Button Text="Listar" Clicked="Button_Clicked"></Button>
+        <ListView x:Name="lvPeople">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding FirstName}"></Label>
+                            <Label Text="{Binding LastName}"></Label>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
