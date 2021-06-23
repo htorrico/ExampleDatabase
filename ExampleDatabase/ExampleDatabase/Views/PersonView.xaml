@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExampleDatabase.Views.PersonView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Example ViewModel"></Label>
+            <Label Text="Nombres"></Label>
+            <Entry Text="{Binding FirstName}"></Entry>
+            <Label Text="Apellidos"></Label>
+            <Entry Text="{Binding LastName}"></Entry>
+            <Button Text="Grabar" Command="{Binding CreateCommand }"></Button>
+            <Button Text="Listar" Command="{Binding GetCommand }"></Button>
+            <ListView ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding FirstName}"></Label>
+                                <Label Text="{Binding LastName}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

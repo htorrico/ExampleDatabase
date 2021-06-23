@@ -12,26 +12,17 @@ namespace ExampleDatabase.Services
     {
         private readonly AppDbContext _context;
 
-        //public PersonService() => _context = App.GetContext();
-        public PersonService()
-        {
-
-            string DbPath = DependencyService.Get<IConfigDataBase>().GetFullPath("efCore.db");
-            _context = new AppDbContext(DbPath);
-            _context.Database.EnsureCreated();
-        }
+        public PersonService() => _context = App.GetContext();
+        
 
 
         public List<Person> Get()
-        {
-
-            //"SELECT * FROM PEOPLE"
+        {            
             return _context.People.ToList();
         }
 
         public void Create( Person person)
-        {
-            //"INSERT INTO PEOPLE VALUES ("+"'person.Id"
+        {         
             _context.People.Add(person);
             _context.SaveChanges();
 

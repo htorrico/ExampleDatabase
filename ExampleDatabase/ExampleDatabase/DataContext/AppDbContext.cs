@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ExampleDatabase.DataContext
 {
-    class AppDbContext: DbContext
+   public class AppDbContext: DbContext
     {
 
         string DbPath = string.Empty;
